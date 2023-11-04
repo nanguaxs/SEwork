@@ -28,6 +28,7 @@ CREATE TABLE `good` (
   `gphoto` varchar(50) DEFAULT NULL,
   `gprice` decimal(10,2) DEFAULT NULL,
   `gonsale` int(255) NOT NULL,
+  `uid` int(11) NOT NULL,
   PRIMARY KEY (`gid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8;
 
@@ -73,6 +74,34 @@ CREATE TABLE `order_detail` (
 -- ----------------------------
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
+  `uid` int(11) NOT NULL AUTO_INCREMENT,
+  `uname` varchar(20) DEFAULT NULL,
+  `uphoto` varchar(255) DEFAULT NULL,
+  `uaddress` varchar(50) DEFAULT NULL,
+  `upassword` varchar(50) DEFAULT NULL,
+  `uphone` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`uid`)
+) ENGINE=InnoDB AUTO_INCREMENT=72 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for business_user
+-- ----------------------------
+DROP TABLE IF EXISTS `business_user`;
+CREATE TABLE `business_user` (
+  `uid` int(11) NOT NULL AUTO_INCREMENT,
+  `uname` varchar(20) DEFAULT NULL,
+  `uphoto` varchar(255) DEFAULT NULL,
+  `uaddress` varchar(50) DEFAULT NULL,
+  `upassword` varchar(50) DEFAULT NULL,
+  `uphone` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`uid`)
+) ENGINE=InnoDB AUTO_INCREMENT=72 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for rider_user
+-- ----------------------------
+DROP TABLE IF EXISTS `rider_user`;
+CREATE TABLE `rider_user` (
   `uid` int(11) NOT NULL AUTO_INCREMENT,
   `uname` varchar(20) DEFAULT NULL,
   `uphoto` varchar(255) DEFAULT NULL,
