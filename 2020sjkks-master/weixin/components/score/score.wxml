@@ -1,0 +1,6 @@
+<!--components/score/score.wxml-->
+<view class="stars-box">
+  <block wx:for="{{list}}" wx:key="index">
+    <image src="{{item}}" class="star" mode='aspectFit' style="height: 50rpx; width: 50rpx;" data-index="{{index}}" wx:for-index="{{index}}" bindtap="scoring"></image>
+  </block>
+</view>

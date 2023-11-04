@@ -1,0 +1,23 @@
+
+<view class='img'>
+<image src="{{img_path}}" mode='widthFix' bindtap="choosePhoto"></image>
+</view>
+<text class="title">{{title}}</text>
+<view class="blank1"></view>
+<view class="good">
+  <!-- <input class='name' placeholder="账户" model:value='{{good_name}}'></input> -->
+  <!-- <view class="price"><input class="num" model:value='{{good_price}}' ></input></view> -->
+  <input class='name' placeholder="商品名称" value = "{{good_name}}" bindinput='getGoodname'></input>
+  <view class="price"><input class="num" placeholder="价格" value = "{{good_price}}" bindinput='getPrice' ></input></view>
+</view>
+<!-- <textarea class="detail" model:value='{{good_detail}}' maxlength='100'></textarea> -->
+<textarea class="detail" placeholder="商品详情" bindinput='getDetail'  maxlength='100'></textarea>
+<button class="btn" bindtap="finish">完成</button>
+<view class="blank"></view>
+
+
+
+ 
+
+
+

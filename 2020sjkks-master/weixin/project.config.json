@@ -1,0 +1,134 @@
+{
+  "description": "项目配置文件",
+  "packOptions": {
+    "ignore": [],
+    "include": []
+  },
+  "setting": {
+    "urlCheck": false,
+    "es6": true,
+    "enhance": false,
+    "postcss": true,
+    "preloadBackgroundData": false,
+    "minified": true,
+    "newFeature": true,
+    "coverView": true,
+    "nodeModules": false,
+    "autoAudits": false,
+    "showShadowRootInWxmlPanel": true,
+    "scopeDataCheck": false,
+    "uglifyFileName": false,
+    "checkInvalidKey": true,
+    "checkSiteMap": true,
+    "uploadWithSourceMap": true,
+    "compileHotReLoad": false,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "useIsolateContext": true,
+    "useCompilerModule": false,
+    "userConfirmedUseCompilerModuleSwitch": false
+  },
+  "compileType": "miniprogram",
+  "libVersion": "2.11.2",
+  "appid": "wx149301f3ee965afe",
+  "projectname": "wx3",
+  "simulatorType": "wechat",
+  "simulatorPluginLibVersion": {},
+  "condition": {
+    "miniprogram": {
+      "list": [
+        {
+          "name": "pages/index/index",
+          "pathName": "pages/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/user/user",
+          "pathName": "pages/user/user",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/set_phone/set_phone",
+          "pathName": "pages/set_phone/set_phone",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/set_address/set_address",
+          "pathName": "pages/set_address/set_address",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/order/order",
+          "pathName": "pages/order/order",
+          "query": "oid=78",
+          "scene": null
+        },
+        {
+          "name": "pages/order/order",
+          "pathName": "pages/order_info/order_info",
+          "query": "oid=78",
+          "scene": null
+        },
+        {
+          "name": "pages/order_info/order_info",
+          "pathName": "pages/order_info/order_info",
+          "query": "oid=1",
+          "scene": null
+        },
+        {
+          "name": "pages/business_home/business_home",
+          "pathName": "pages/business_home/business_home",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/new_order/new_order",
+          "pathName": "pages/new_order/new_order",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/comment/comment",
+          "pathName": "pages/comment/comment",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/set_user/set_user",
+          "pathName": "pages/set_user/set_user",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/courier/courier",
+          "pathName": "pages/courier/courier",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/set_address/set_address",
+          "pathName": "pages/set_address/set_address",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/set_address/set_address",
+          "pathName": "pages/set_address/set_address",
+          "query": "",
+          "scene": null
+        }
+      ]
+    }
+  },
+  "editorSetting": {
+    "tabIndent": "insertSpaces",
+    "tabSize": 2
+  }
+}
