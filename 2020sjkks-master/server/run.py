@@ -171,9 +171,13 @@ def login():
     """
     name=request.json['name']
     password=request.json['password']
+    status=1
     db = pymysql.connect( host = "localhost",user = USER, password = PASSWORD,database = DATABASE)
     cursor = db.cursor()
-    sql="select count(*) from user where uname='"+name+"';"
+    if status==1:
+        sql="select count(*) from user where uname='"+name+"';"
+    elif status==2:
+        sql="select count(*) from business_user where uname='"+name+"';"
     cursor.execute(sql)
     result=cursor.fetchall()[0][0]
     if result==0:
@@ -182,7 +186,10 @@ def login():
         }
         return simplejson.dumps(thang)
     elif result>0:
-        sql2="select * from user where uname='"+name+"';"
+        if status==1:
+            sql2="select * from user where uname='"+name+"';"
+        elif status==2:
+            sql2="select * from business_user where uname='"+name+"';"
         cursor.execute(sql2)
         user_info=cursor.fetchall()[0]
         true_password=user_info[4]
