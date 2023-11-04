@@ -14,8 +14,8 @@ import datetime
 
 DATABASE='meituan'#数据库名称
 USER='root'#数据库用户
-PASSWORD='020415'#数据库密码
-img_path = 'C:/Users/The Best Summer/Desktop/2020sjkks-master/server/imgs/'
+PASSWORD='123456'#数据库密码
+img_path = 'C:/Users/liang/Desktop/SE/seconditer/2020sjkks-master/server/imgs/'
 
 app = Flask(__name__)
 @app.route('/')
@@ -30,6 +30,18 @@ def goods():
     db = pymysql.connect( host = "localhost",user = USER, password = PASSWORD,database = DATABASE)#用用户名、密码登录数据库
     cursor = db.cursor()    #定义一个sql执行对象
     sql="select gid,gname,gphoto,gprice from good where gonsale=1;"   #写sql查询语句                  
+    cursor.execute(sql)      #用sql执行对象执行sql语句
+    res1=cursor.fetchall()   #执行对象返回所有查询结果到res     
+    return simplejson.dumps(res1)   #返回查询结果到前端
+
+@app.route('/business_user',methods=['POST'])  
+def business_user():
+    """
+    用POST方法返回商家信息
+    """
+    db = pymysql.connect( host = "localhost",user = USER, password = PASSWORD,database = DATABASE)#用用户名、密码登录数据库
+    cursor = db.cursor()    #定义一个sql执行对象
+    sql="select uid,uname,uphoto from business_user;"   #写sql查询语句                  
     cursor.execute(sql)      #用sql执行对象执行sql语句
     res1=cursor.fetchall()   #执行对象返回所有查询结果到res     
     return simplejson.dumps(res1)   #返回查询结果到前端
