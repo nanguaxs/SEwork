@@ -213,15 +213,22 @@ def register():
     """
     name=request.json['name']
     password=request.json['password']
+    status=1
     db = pymysql.connect( host = "localhost",user = USER, password = PASSWORD,database = DATABASE)
     cursor = db.cursor()
-    sql="select count(*) from user where uname='"+name+"';"
+    if status==1:
+        sql="select count(*) from user where uname='"+name+"';"
+    elif status==2:
+        sql="select count(*) from business_user where uname='"+name+"';"
     cursor.execute(sql)
     result=cursor.fetchall()[0][0]
     if result>0:
         return 'exist'
     elif result==0:
-        sql2="insert into user values(null,'"+name+"',null,null,'"+password+"',null);"
+        if status==1:
+            sql2="insert into user values(null,'"+name+"',null,null,'"+password+"',null);"
+        elif status==2:
+            sql2="insert into business_user values(null,'"+name+"',null,null,'"+password+"');"
         try:
             cursor.execute(sql2)
             db.commit()
