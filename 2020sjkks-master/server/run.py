@@ -397,9 +397,10 @@ def add_good():
     gdetail=data['gdetail']
     gprice=data['gprice']
     gphoto=data['gphoto']
+    uid=1
     db = pymysql.connect( host = "localhost",user = USER, password = PASSWORD,database = DATABASE)
     cursor = db.cursor()
-    sql="insert into good(gname,gdetail,gphoto,gprice,gonsale) values('"+gname+"','"+gdetail+"','"+gphoto+"',"+str(gprice)+",1);"
+    sql="insert into good(gname,gdetail,gphoto,gprice,gonsale,uid) values('"+gname+"','"+gdetail+"','"+gphoto+"',"+str(gprice)+",1,"+str(uid)+");"
     try:
         cursor.execute(sql)
         sql="SELECT LAST_INSERT_ID();" #获取该订单的订单号
