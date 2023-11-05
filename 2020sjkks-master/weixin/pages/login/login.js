@@ -5,7 +5,14 @@ Page({
    */
   data: {
     name:'',
-    password:''
+    password:'',
+    curfId: -1,
+    fruits: [{name: "商家" ,id: 1},
+    {name: "用户" ,id: 2},
+    {name: "骑手" ,id: 3}
+   ],
+   curfruitName:"" ,
+   title: "请选择您的身份"
   },
   login:function(){
     let name = this.data.name
