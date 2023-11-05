@@ -16,8 +16,10 @@
     "pages/new_order/new_order",
     "pages/business_good_edit/business_good_edit",
     "pages/business_summary/business_summary",
-    "pages/courier/courier"
+    "pages/courier/courier",
+    "pages/business_list/business_list"
   ],
+  "requiredPrivateInfos": ["getLocation", "chooseLocation"],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#7bbfea",
@@ -28,7 +30,7 @@
     "selectedColor": "#7bbfea",
     "list": [
       {
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/business_list/business_list",
         "text": "首页",
         "iconPath": "imgs/主页.png",
         "selectedIconPath": "imgs/主页1.png"
@@ -55,4 +57,6 @@
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"
+  
+
 }

@@ -34,18 +34,21 @@ def goods():
     res1=cursor.fetchall()   #执行对象返回所有查询结果到res     
     return simplejson.dumps(res1)   #返回查询结果到前端
 
-@app.route('/business_user',methods=['POST'])  
-def business_user():
+@app.route('/show_business',methods=['POST'])
+def show_business():
     """
     用POST方法返回商家信息
     """
     db = pymysql.connect( host = "localhost",user = USER, password = PASSWORD,database = DATABASE)#用用户名、密码登录数据库
     cursor = db.cursor()    #定义一个sql执行对象
-    sql="select uid,uname,uphoto from business_user;"   #写sql查询语句                  
-    cursor.execute(sql)      #用sql执行对象执行sql语句
-    res1=cursor.fetchall()   #执行对象返回所有查询结果到res     
+    sql="select uid,uname,uphoto from business_user;"   #写sql查询语句
+    try:
+        cursor.execute(sql)      #用sql执行对象执行sql语句
+        res1=cursor.fetchall()   #执行对象返回所有查询结果到res
+        return {'state': 'succeed', 'data': res1}
+    except:
+        return {'state': 'fail'}
     return simplejson.dumps(res1)   #返回查询结果到前端
-
 @app.route('/sales')
 def sales():
     db = pymysql.connect( host = "localhost",user = USER, password = PASSWORD,database = DATABASE)
@@ -213,7 +216,7 @@ def register():
     """
     name=request.json['name']
     password=request.json['password']
-    status=1
+    status=request.json['status']
     db = pymysql.connect( host = "localhost",user = USER, password = PASSWORD,database = DATABASE)
     cursor = db.cursor()
     if status==1:

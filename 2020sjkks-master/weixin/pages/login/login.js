@@ -83,7 +83,8 @@ Page({
           console.log(app.globalData.upassword)
           app.globalData.uphone=res.data['user_info'][5]
           wx.switchTab({
-            url: "/pages/index/index",
+            //url: "/pages/index/index",
+            url: "/pages/business_list/business_list",
           })
         }
       }
