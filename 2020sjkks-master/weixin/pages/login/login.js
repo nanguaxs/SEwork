@@ -7,16 +7,28 @@ Page({
     name:'',
     password:'',
     curfId: -1,
-    fruits: [{name: "商家" ,id: 1},
-    {name: "用户" ,id: 2},
+    selectedId: null, // 初始化为null，表示未选择
+    selectedName: '', // 初始化为空字符串
+    fruits: [{name: "普通用户" ,id: 1},
+    {name: "商家" ,id: 2},
     {name: "骑手" ,id: 3}
    ],
    curfruitName:"" ,
    title: "请选择您的身份"
   },
+
+  changeFruit(e){
+    const { selectId, select } = e.detail; // 从事件对象中获取子组件传递的值
+    this.setData({
+      curfId: selectId, // 保存选中的id
+      curfruitName: select, // 保存选中的name
+    });
+  },
+
   login:function(){
     let name = this.data.name
     let password = this.data.password
+    let status=this.data.curfId
     if (name == '') {
       wx: wx.showToast({
         title: '请输入姓名',
@@ -41,7 +53,8 @@ Page({
       url: getApp().globalData.server + '/login',
       data: {
         name:name,
-        password:password
+        password:password,
+        status:status
       },
       method:"POST",
       success: (res) => {
@@ -81,6 +94,7 @@ Page({
   register:function(){
     let name = this.data.name
     let password = this.data.password
+    let status=this.data.curfId
     if (name == '') {
       wx: wx.showToast({
         title: '请输入姓名',
@@ -111,7 +125,8 @@ Page({
       url: getApp().globalData.server + '/register',
       data: {
         name:this.data.name,
-        password:this.data.password
+        password:this.data.password,
+        status:status
       },
       method:"POST",
       success: (res) => {

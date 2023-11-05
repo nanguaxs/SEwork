@@ -15,7 +15,7 @@ import datetime
 DATABASE='meituan'#数据库名称
 USER='root'#数据库用户
 PASSWORD='123456'#数据库密码
-img_path = 'C:/Users/liang/Desktop/SE/seconditer/2020sjkks-master/server/imgs/'
+img_path = 'C:/Users/liang/Desktop/SE/seconditer-b/2020sjkks-master/server/imgs/'
 
 app = Flask(__name__)
 @app.route('/')
@@ -171,7 +171,7 @@ def login():
     """
     name=request.json['name']
     password=request.json['password']
-    status=1
+    status=request.json['status']
     db = pymysql.connect( host = "localhost",user = USER, password = PASSWORD,database = DATABASE)
     cursor = db.cursor()
     if status==1:

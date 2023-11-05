@@ -1,14 +1,17 @@
-<view class='small'>
+<view class='small' style="width: 687rpx; height: 624rpx; display: block; box-sizing: border-box">
 <input placeholder-class="placeholder1" class="input1" placeholder="账户" bindinput='getUsername' maxlength='15' value='{{name}}' />
 <input placeholder-class="placeholder1" class="input1" placeholder="密码" bindinput='getPassword' type="password" maxlength='15' value='{{password}}'/>
+
 <select
-	title="请选择您的身份"
-	nowId="{{curfId}}"
-	nameList="{{fruits}}" 
-	nowName="{{curfruitName}}" 
-	placeholder="请选择身份" 
-	bind:handleChange="changeFruit">
-</select>
-<button class="button1" bindtap="login">登录</button>
-<button class='button1' bindtap="register">注册</button>
+  title="请选择您的身份"
+  nowId="{{curfId}}"
+  nameList="{{fruits}}" 
+  nowName="{{curfruitName}}" 
+  placeholder="请选择身份" 
+  bind:handleChange="changeFruit"
+  style="position: relative; left: 29rpx; top: 50rpx; font-size: 15px; color: #292626;"
+></select>
+
+<button class="button1" bindtap="login" style="position: relative; left: 0rpx; top: 76rpx">登录</button>
+<button class='button1' bindtap="register" style="position: relative; left: 0rpx; top: 102rpx">注册</button>
 </view>
