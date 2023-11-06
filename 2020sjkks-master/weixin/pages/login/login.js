@@ -43,11 +43,11 @@ Page({
       })
       return false
     }
-    else if (name=='admin' && password=='12345'){
-      wx.redirectTo({
-        url: '/pages/business_home/business_home'
-      })
-    }
+    //else if (name=='admin' && password=='12345'){
+    //  wx.redirectTo({
+    //    url: '/pages/business_home/business_home'
+    //  })
+    //}
     else{
       wx.request({
       url: getApp().globalData.server + '/login',
@@ -82,10 +82,20 @@ Page({
           app.globalData.upassword=res.data['user_info'][4] 
           console.log(app.globalData.upassword)
           app.globalData.uphone=res.data['user_info'][5]
-          wx.switchTab({
-            //url: "/pages/index/index",
-            url: "/pages/business_list/business_list",
-          })
+          app.globalData.ustatus=status
+          if (status==1) {
+            wx.switchTab({
+              //url: "/pages/index/index",
+              url: "/pages/business_list/business_list",
+            })
+          }
+            
+          else if(status==2){
+            wx.redirectTo({
+              url: '/pages/business_home/business_home'
+            })
+          }
+            
         }
       }
     })

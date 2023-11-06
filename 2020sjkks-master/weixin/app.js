@@ -7,5 +7,6 @@ App({
     uaddress:null,
     upassword:null,
     uphone:null,
+    ustatus:null,
   }
 })

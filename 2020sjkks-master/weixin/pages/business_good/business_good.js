@@ -1,8 +1,10 @@
+var app = getApp();
 Page({
   data: {
     // 数据源
     goods:[//0:gid,1:gname,2:gphoto,3,gprice
     ],
+    uid:'',
     sales:[],
     random:'',
     url:getApp().globalData.server,
@@ -13,13 +15,21 @@ Page({
     this.setData({
       random:Math.random() / 9999
     })
+    this.setData({
+      uid:app.globalData.uid,
+      
+    })
     //console.log(this.data.goods);
   },
   getGoods:function(){ //获取菜品信息
     console.log("tap");
     wx.request({
       url: getApp().globalData.server + '/goods',
+      data: {
+        uid:this.data.uid,
+      },
       method:'POST',
+      
       complete: (res) => {
         //console.log(res);
         this.setData({
